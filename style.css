@@ -1,0 +1,150 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial;
+    background-image: linear-gradient( to bottom right, rgb(201, 136, 115),rgb(151, 76, 156));
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+.calculadora{
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #000;
+}
+
+.activarTema{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.activarTema.activando{
+    color: #333;
+}
+
+.activarTema.activando::before{
+    background-color: #fff;
+}
+
+.activarTema::before{
+    content: '';
+    height: 30px;
+    width: 70px;
+    position: absolute;
+    top: 50%;
+    transform: translate(150%, -50%);
+    border-radius: 50px;
+    background-color: #333;
+    z-index: -1;
+}
+
+#pantalla{
+    margin: 0 10px;
+    height: 150px;
+    width: auto;
+    max-width: 270px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 30px;
+    margin-bottom: 20px;
+    overflow-x: scroll;
+}
+
+#pantalla::-webkit-scrollbar{
+    display: block;
+    height: 3px;
+}
+
+button{
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+button#igual{
+    height: 130px;
+}
+
+/* Tema Claro */
+.calculadora{
+    background-color: #fff;
+}
+
+.calculadora#pantalla{
+    color: #0a1e23;
+}
+
+.calculadora button#limpiar{
+    background-color: #fda7ac;
+    color: #fd3e4b;
+}
+
+.calculadora button.btnNumero{
+    background-color: #9dd9fa;
+    color: #4c4c4c;
+}
+
+.calculadora button.btnOperador{
+    background-color: #f9a8f3;
+    color: #ff42f9;
+}
+
+.calculadora button.btnIgual{
+    background-color: #8fffe5;
+    color: #232222;
+}
+
+/* Tema Oscruo */
+.calculadora.dark{
+    background-color: #031115;
+}
+
+.calculadora.dark #pantalla{
+    color: #f8fafb;
+}
+
+.calculadora.dark button#limpiar{
+    background-color: #3d191e;
+    color: #bd3740;
+}
+
+.calculadora.dark button.btnNumero{
+    background-color: #395569;
+    color: #f8fafb;
+}
+
+.calculadora.dark button.btnOperador{
+    background-color: #3e1f39;
+    color: #aa00a4;
+}
+
+.calculadora.dark button.btnIgual{
+    background-color: #325333;
+    color: #ffffff;
+}

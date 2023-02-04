@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>CalculadoraBasica</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="calculadora dark"> <!-- Dejamos un espacio en calculadora para activar el color en css -->
+            <div class="activarTema activando"> 
+                <i class="icono"></i>
+            </div>
+            <div class="pantallaVisual">
+                <div id="pantalla"></div>
+            </div>
+            <div class="buttons"> <!-- Creamos una fila con 4 columnas -->
+                <table>
+                    <tr>
+                        <td><button class="btnOperador" onclick="eliminar(0)" id="limpiar">AC</button></td>
+                        <td><button class="btnOperador" onclick="agregar('/')" id="/">&divide;</button></td>
+                        <td><button class="btnOperador" onclick="agregar('*')" id="*">&times;</button></td>
+                        <td><button class="btnOperador" onclick="eliminar(1)" id="retroceso"><</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btnNumero" onclick="agregar(7)" id="7">7</button></td>
+                        <td><button class="btnNumero" onclick="agregar(8)" id="8">8</button></td>
+                        <td><button class="btnNumero" onclick="agregar(9)" id="9">9</button></td>
+                        <td><button class="btnOperador" onclick="agregar('-')" id="-">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btnNumero" onclick="agregar(4)" id="4">4</button></td>
+                        <td><button class="btnNumero" onclick="agregar(5)" id="5">5</button></td>
+                        <td><button class="btnNumero" onclick="agregar(6)" id="6">6</button></td>
+                        <td><button class="btnOperador" onclick="agregar('+')" id="+">+</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btnNumero" onclick="agregar(1)" id="1">1</button></td>
+                        <td><button class="btnNumero" onclick="agregar(2)" id="2">2</button></td>
+                        <td><button class="btnNumero" onclick="agregar(3)" id="3">3</button></td>
+                        <td rowspan="2"><button class="btnIgual" onclick="resultado()" id="igual">=</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btnOperador"  id="(">(</button></td>
+                        <td><button class="btnNumero" onclick="agregar(0)" id="0">0</button></td>
+                        <td><button class="btnOperador" id=")">)</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+    
+</body>
+</html>
